@@ -1,17 +1,15 @@
 
 - check disk size
-  - `df -h`  
+  - `df -h`
   - `du -h --max-depth=1`
 
-- zip / unzip
-  - compress
-    - `tar -cvf T.tar files`
+- compress, zip
+    - compress: `tar -cvf T.tar files`
     - `zip -r <file.zip> <dir>`
-  - expand
+- expand, unzip
     - `tar -xvf T.tar (현재 디렉토리)`
     - `tar -xvf T.tar -C dir`
     - `unzip <file.zip> -d <dir>`
-  
   
 - SCP
   - `scp testfile2 root@192.168.159.129:/tmp/testclient`
@@ -53,4 +51,4 @@ source /etc/bash_completion
 
 
 # Redis
-auth <password>
+`auth <password>`
