@@ -29,6 +29,20 @@
   - `docker ps -q | xargs  docker stats --no-stream`
   - `top -i`
 
+- remove unnecessary docker containers
+  - `docker rmi -f $(docker images | grep "gcr.io" | awk "{print \$3}")`
+  - `sudo docker system prune -a -f`
+  - `docker run --detach --name [container_name] -p 80:80 [repo_name]`
+
+- backup docker images
+```
+IDS=$(docker images | awk '{if ($1 ~ /^(debian|centos)/) print $3}')
+docker save $IDS -o /path/to/save/somedockersimages.tar
+```
+
+### Docker Compose
+- See all logs of running containers described in docker-compose yaml files: `docker-compose -f run.yml logs --tail=0 --follow`
+
 ## I can't umount nas
 ```bash
 umount -f /nas
@@ -52,3 +66,23 @@ source /etc/bash_completion
 
 # Redis
 `auth <password>`
+redis-cli -h 10.146.0.11 -p 6379 -a p@ssword1
+KEYS **
+GET <KEY>
+  
+### PM2
+```
+pm2 start --name dashboard npm -- start
+pm2 start --name frontend-gui npm -- start --watch
+```
+
+
+### gcloud
+```
+gcloud auth login --no-launch-browser
+gcloud config set project lge-pri-cloud
+
+gcloud auth login
+gcloud auth configure-docker
+```
+
