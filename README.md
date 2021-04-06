@@ -1,3 +1,3 @@
 # cheetsheet
 
-[git.md]
+[git.md](git.md)
