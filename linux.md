@@ -14,7 +14,9 @@
 - SCP
   - `scp testfile2 root@192.168.159.129:/tmp/testclient`
 
-    
+### Ports
+`netstat -ntlp | grep :<port>
+
     
 ### Users
 - `adduser <username>` : add user
